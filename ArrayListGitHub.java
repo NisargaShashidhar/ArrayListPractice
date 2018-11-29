@@ -32,5 +32,26 @@ public class ArrayListGitHub{
 		}
 		return returnStatement;
 	}
-
+	
+	public static ArrayList<Integer> removeDuplicates(ArrayList<Integer> input){
+		ArrayList<Integer> output = new ArrayList<Integer>();
+		int x;
+		boolean duplicate = false;
+		for(int i = 0; i < input.size(); i++){
+			for(int j = 0; j < output.size(); j++){
+				if(output.get(j) == input.get(i)){
+					duplicate = true;
+					x = j;
+					break;
+				}
+				else
+					duplicate = false;
+			}
+			if(duplicate == false)
+				output.add(input.get(i));
+			else
+				output.remove(j);
+		}
+		return output;
+	}
 }
