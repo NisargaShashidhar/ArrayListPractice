@@ -10,6 +10,10 @@ public class ArrayListGitHub{
 
 		ArrayList<Integer> combined = combine(list1, list2);
 		System.out.println(combined);
+		
+		System.out.println(printList(list1));
+		ArrayList<Integer> noDuplicates = removeDuplicates(combined);
+		System.out.println(printList(noDuplicates));
 	}
 
 	public static ArrayList<Integer> combine(ArrayList<Integer> listOne, ArrayList<Integer> listTwo){
