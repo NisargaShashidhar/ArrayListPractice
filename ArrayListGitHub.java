@@ -10,7 +10,7 @@ public class ArrayListGitHub{
 
 		ArrayList<Integer> combined = combine(list1, list2);
 		System.out.println(combined);
-		
+
 		System.out.println(printList(list1));
 		ArrayList<Integer> noDuplicates = removeDuplicates(combined);
 		System.out.println(printList(noDuplicates));
@@ -31,30 +31,30 @@ public class ArrayListGitHub{
 		String returnStatement = "";
 		for(int x = 0; x < list.size(); x++){
 			if(x == list.size()-1)
-				returnStatement += x;
-			returnStatement += x+", ";
+				returnStatement += list.get(x);
+			else
+				returnStatement += list.get(x)+", ";
 		}
 		return returnStatement;
 	}
-	
+
 	public static ArrayList<Integer> removeDuplicates(ArrayList<Integer> input){
 		ArrayList<Integer> output = new ArrayList<Integer>();
-		int x;
+		int x = 0;
 		boolean duplicate = false;
 		for(int i = 0; i < input.size(); i++){
+			duplicate = false;
 			for(int j = 0; j < output.size(); j++){
 				if(output.get(j) == input.get(i)){
 					duplicate = true;
 					x = j;
 					break;
 				}
-				else
-					duplicate = false;
 			}
 			if(duplicate == false)
 				output.add(input.get(i));
 			else
-				output.remove(j);
+				output.remove(x);
 		}
 		return output;
 	}
