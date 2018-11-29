@@ -26,8 +26,11 @@ public class ArrayListGitHub{
 	public static String printList(ArrayList<Integer> list){
 		String returnStatement = "";
 		for(int x = 0; x < list.size(); x++){
-			//if(x ==
+			if(x == list.size()-1)
+				returnStatement += x;
+			returnStatement += x+", ";
 		}
+		return returnStatement;
 	}
 
 }
